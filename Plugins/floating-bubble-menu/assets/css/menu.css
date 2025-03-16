@@ -1,0 +1,148 @@
+#floating-button-menu {
+  display: block;
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  position: fixed;
+  top: 20px;
+  right: 40px;
+}
+
+.floating-button-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  border-radius: 50%;
+  opacity: 0.6;
+  /* mix-blend-mode: screen; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+    color 0.12s ease-out;
+  cursor: pointer;
+  text-align: center;
+  line-height: 70px;
+  color: transparent;
+  font-size: 25px;
+}
+
+.floating-button-menu-item a {
+  color: transparent;
+  display: inline-flex;
+}
+
+/*
+  .floating-button-menu-item:after{
+    content: "";
+    display: block; 
+    bottom: 100%; 
+    left: 50%; 
+    height: ($offsetAmount*100%)-100; 
+    margin-left: -1px; 
+    position: absolute; 
+    width: 4px; 
+    background-color: inherit; 
+    opacity: 0; 
+    transition: opacity $transitionTime ease-out; 
+  }
+  */
+.floating-button-menu-item:first-child:after {
+  display: none;
+}
+
+.floating-button-menu-item a svg {
+  width: 30px;
+  height: 30px;
+}
+
+.floating-button-menu-item:nth-child(1) {
+  /* background-color: #004db3; */
+  transform: translate(0, -20%);
+  z-index: 3;
+  transition-duration: 0.12s;
+}
+
+.floating-button-menu-item:nth-child(2) {
+  /* background-color: #26b85a; */
+  transform: translate(20%, 0);
+  z-index: 2;
+  transition-duration: 0.24s;
+}
+
+.floating-button-menu-item:nth-child(3) {
+  /* background-color: #ffcb00; */
+  transform: translate(0, 20%);
+  z-index: 1;
+  transition-duration: 0.36s;
+}
+
+.floating-button-menu-item:nth-child(4) {
+  /* background-color: #d88e8e; */
+  transform: translate(-20%, 0);
+  z-index: 0;
+  transition-duration: 0.48s;
+}
+
+#floating-button-menu:hover {
+  height: 308px;
+}
+#floating-button-menu:hover .floating-button-menu-item, #floating-button-menu:hover .floating-button-menu-item a   {
+  color: white;
+}
+
+#floating-button-menu:hover .floating-button-menu-item:nth-child(1) {
+  transform: translate(0, 0%);
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(1):hover {
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translate(0, 0%) scale(1.15, 1.15);
+  transition-duration: 0.24s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(1):after {
+  opacity: 1;
+  transition-delay: 0.08s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(2) {
+  transform: translate(0, 110%);
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(2):hover {
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translate(0, 110%) scale(1.15, 1.15);
+  transition-duration: 0.24s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(2):after {
+  opacity: 1;
+  transition-delay: 0.16s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(3) {
+  transform: translate(0, 220%);
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(3):hover {
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translate(0, 220%) scale(1.15, 1.15);
+  transition-duration: 0.24s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(3):after {
+  opacity: 1;
+  transition-delay: 0.24s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(4) {
+  transform: translate(0, 330%);
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(4):hover {
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translate(0, 330%) scale(1.15, 1.15);
+  transition-duration: 0.24s;
+}
+#floating-button-menu:hover .floating-button-menu-item:nth-child(4):after {
+  opacity: 1;
+  transition-delay: 0.32s;
+}
